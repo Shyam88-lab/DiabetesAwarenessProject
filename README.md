@@ -1,6 +1,6 @@
 # OpenDiabetes Atlas
 
-OpenDiabetes Atlas is a beginner-friendly, open-source project focused on diabetes awareness and advocacy.
+OpenDiabetes Atlas is a open-source project focused on diabetes awareness and advocacy.
 
 This project was created to make diabetes easier to understand for non-medical audiences, and to highlight how it affects not just individuals, but entire families.
 
