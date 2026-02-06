@@ -17,9 +17,10 @@ async function renderPrevalenceChart() {
   const data = await loadCSV("/data/prevalence.csv");
 
   const labels = data.map(d => d.year);
-  const values = data.map(d => d.value);
+  const values = data.map(d => d.people_with_diabetes_millions);
 
   const ctx = document.getElementById("prevalenceChart");
+  if (!ctx) return;
 
   new Chart(ctx, {
     type: "line",
@@ -27,7 +28,8 @@ async function renderPrevalenceChart() {
       labels,
       datasets: [{
         label: "People living with diabetes (millions)",
-        data: values
+        data: values,
+        tension: 0.3
       }]
     },
     options: {
@@ -38,9 +40,18 @@ async function renderPrevalenceChart() {
           display: true,
           text: "Global diabetes prevalence (estimated)"
         }
+      },
+      scales: {
+        y: {
+          title: {
+            display: true,
+            text: "Millions of people"
+          }
+        }
       }
     }
   });
 }
+
 
 renderPrevalenceChart();
