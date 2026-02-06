@@ -14,7 +14,7 @@ async function loadCSV(path) {
 }
 
 async function renderPrevalenceChart() {
-  const data = await loadCSV("/data/prevalence.csv");
+  const data = await loadCSV("/site/data/prevalence.csv");
 
   const labels = data.map(d => d.year);
   const values = data.map(d => d.people_with_diabetes_millions);
